@@ -95,6 +95,65 @@
             }
         }
     });
+
+    //Submit Mail
+    $("button#submit_mail").click(function(e){
+        $(".error_message").remove();
+        e.preventDefault();
+
+        var name = $("input#name");
+        var email = $("input#email");
+        var subject = $("input#subject");
+        var message = $("textarea#message");
+
+        if((name.val() == "") || (email.val() == "") || (subject.val() == "") || (message.val() == "")){
+            if(name.val() == ""){
+                name.after('<div class="col-12 error_message text-danger">Please provide your Name</div>');
+            }
+            if(email.val() == ""){
+                email.after('<div class="col-12 error_message text-danger">Please provide your Email </div>');
+            }
+            if(subject.val() == ""){
+                subject.after('<div class="col-12 error_message text-danger">What is the Subject of your Mail</div>');
+            }
+            if(message.val()){
+                message.after('<div class="col-12 error_message text-danger">Message CANNOT be empty</div>');
+            }
+            return false;
+        } else {
+            var data = {
+                "name": name,
+                "email": email,
+                "subject": subject,
+                "message": subject
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "api/send_mail",
+                data: data,
+                dataType: "json",
+                headers: {
+                    "Accept": "application/json"
+                },
+                success: function(data){
+                    if(data.status == "success"){
+                        name.empty();
+                        email.empty();
+                        subject.empty();
+                        message.empty();
+
+                        alert('Message sent successfully. We will get back to you soon');
+                    } else {
+                        alert(data.message);
+                    }
+                },
+                error: function(data){
+                    alert('Oopsie! Message could not be sent'+data.responseText);
+                }
+            })
+        }
+    })
     
 })(jQuery);
 

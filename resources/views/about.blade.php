@@ -9,7 +9,7 @@
 @endsection
 
 @section('other_links')
-<li class="breadcrumb-item text-white active" aria-current="page">About</li>
+    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
 @endsection
 
 @section('content')
