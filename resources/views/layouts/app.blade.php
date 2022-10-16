@@ -46,30 +46,30 @@
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="m-0">BizConsult</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                    {{-- <h1 class="m-0">BizConsult</h1> --}}
+                    <img src="{{ asset('img/brooks_logo.png') }}" alt="Logo">
+                    <span class="text-dark">BrooksVine Consuting</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="./" class="nav-item nav-link active">Home</a>
-                        <a href="about" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="{{ env('APP_URL') }}" class="nav-item nav-link {{ (request()->is('')) ? 'active' : '' }}">Home</a>
+                        <a href="{{ env('APP_URL') }}/about" class="nav-item nav-link {{ (request()->is('about')) ? 'active' : '' }}">About</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle {{ (request()->is('services/*')) ? 'active' : '' }}" data-bs-toggle="dropdown">Our Services</a>
                             <div class="dropdown-menu m-0">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="quote.html" class="dropdown-item">Free Quote</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
+                                <a href="{{ env('APP_URL') }}/services/business_growth_support" class="dropdown-item">Business Growth Support</a>
+                                <a href="{{ env('APP_URL') }}/services/business-analytics" class="dropdown-item">Business Analytics</a>
+                                <a href="{{ env('APP_URL') }}/services/blip" class="dropdown-item">Business Leaders Incubation Programs (BLIP)</a>
+                                <a href="{{ env('APP_URL') }}/services/sbpl" class="dropdown-item">Strategic Business Plan Design</a>
+                                <a href="{{ env('APP_URL') }}/services/cac-business" class="dropdown-item">CAC Business Formalization</a>
                             </div>
                         </div>
-                        <a href="contact" class="nav-item nav-link">Contact</a>
+                        <a href="{{ env('APP_URL') }}/contact" class="nav-item nav-link {{ (request()->is('contact')) ? 'active' : '' }}">Contact</a>
                     </div>
-                    <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Free Quote</a>
+                    <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Book Free Consultation</a>
                 </div>
             </nav>
 
@@ -78,7 +78,7 @@
                     <h1 class="text-white animated zoomIn mb-3">@yield('page_title')</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="./">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="{{ env('APP_URL') }}">Home</a></li>
                             @yield('other_links')
                         </ol>
                     </nav>

@@ -22,4 +22,5 @@ Route::controller(PageController::class)->group(function(){
     Route::get('/', 'index');
     Route::get('/about', 'about');
     Route::get('/contact', 'contact');
+    Route::get('/services/{service}', 'services');
 });

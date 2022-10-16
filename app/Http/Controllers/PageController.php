@@ -36,4 +36,10 @@ class PageController extends Controller
             ], 400);
         }
     }
+
+    public function services($service){
+        if(!empty($service)){
+            return view($service);
+        }
+    }
 }
