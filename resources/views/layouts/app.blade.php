@@ -61,7 +61,7 @@
                             <a href="#" class="nav-link dropdown-toggle {{ (request()->is('services/*')) ? 'active' : '' }}" data-bs-toggle="dropdown">Our Services</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{{ env('APP_URL') }}/services/business_growth_support" class="dropdown-item">Business Growth Support</a>
-                                <a href="{{ env('APP_URL') }}/services/business-analytics" class="dropdown-item">Business Analytics</a>
+                                <a href="{{ env('APP_URL') }}/services/business_analytics" class="dropdown-item">Business Analytics</a>
                                 <a href="{{ env('APP_URL') }}/services/blip" class="dropdown-item">Business Leaders Incubation Programs (BLIP)</a>
                                 <a href="{{ env('APP_URL') }}/services/sbpl" class="dropdown-item">Strategic Business Plan Design</a>
                                 <a href="{{ env('APP_URL') }}/services/cac-business" class="dropdown-item">CAC Business Formalization</a>
