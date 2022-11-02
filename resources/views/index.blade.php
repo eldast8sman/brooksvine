@@ -46,30 +46,29 @@
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="m-0">BizConsult</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                    <img src="{{ asset('img/brooks_logo.png') }}" alt="Logo">
+                    <span class="text-dark">BrooksVine Consuting</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="./" class="nav-item nav-link active">Home</a>
-                        <a href="about" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="{{ env('APP_URL') }}" class="nav-item nav-link {{ (request()->is('')) ? 'active' : '' }}">Home</a>
+                        <a href="{{ env('APP_URL') }}/about" class="nav-item nav-link {{ (request()->is('about')) ? 'active' : '' }}">About</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle {{ (request()->is('services/*')) ? 'active' : '' }}" data-bs-toggle="dropdown">Our Services</a>
                             <div class="dropdown-menu m-0">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="quote.html" class="dropdown-item">Free Quote</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
+                                <a href="{{ env('APP_URL') }}/services/business_growth_support" class="dropdown-item">Business Growth Support</a>
+                                <a href="{{ env('APP_URL') }}/services/business_analytics" class="dropdown-item">Business Analytics</a>
+                                <a href="{{ env('APP_URL') }}/services/blip" class="dropdown-item">Business Leaders Incubation Programs (BLIP)</a>
+                                <a href="{{ env('APP_URL') }}/services/sbpl" class="dropdown-item">Strategic Business Plan Design</a>
+                                <a href="{{ env('APP_URL') }}/services/cac-business" class="dropdown-item">CAC Business Formalization</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{ env('APP_URL') }}/contact" class="nav-item nav-link {{ (request()->is('contact')) ? 'active' : '' }}">Contact</a>
                     </div>
-                    <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Free Quote</a>
+                    <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Book Free Consultation</a>
                 </div>
             </nav>
 
@@ -78,8 +77,8 @@
                     <div class="row g-5 align-items-center">
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated zoomIn">We Help To Push Your Business To The Top Level</h1>
-                            <p class="text-white pb-3 animated zoomIn">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
-                            <a href="" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Learn More</a>
+                            <p class="text-white pb-3 animated zoomIn">With Excellent Service Delivery, Confidentiality, Innovation, Integrity and Professionalism, we can help you take your business from where it is now to where you really want it to be and even beyond.</p>
+                            <a href="{{ env('APP_URL') }}/about" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Learn More</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
                             <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
@@ -96,33 +95,25 @@
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="img/about.png">
+                        <img class="img-fluid" src="{{ asset('img/brooksvine_edited.jpg') }}">
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">About Us</div>
-                        <h2 class="mb-4">Award Wining Consultancy Agency For Your Business</h2>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod</p>
-                        <div class="row g-3 mb-4">
-                            <div class="col-12 d-flex">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-user-tie text-white"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <h6>Business Planning</h6>
-                                    <span>Tempor erat elitr rebum at clita. Diam dolor ipsum amet eos erat ipsum lorem et sit sed stet lorem sit clita duo</span>
-                                </div>
-                            </div>
-                            <div class="col-12 d-flex">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-chart-line text-white"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <h6>Financial Analaysis</h6>
-                                    <span>Tempor erat elitr rebum at clita. Diam dolor ipsum amet eos erat ipsum lorem et sit sed stet lorem sit clita duo</span>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a>
+                        <h2 class="mb-4">Bespoke Consultancy Agency For Your Business</h2>
+                        <p class="mb-4">
+                            Many organizations in the cause of their daily activities drift from their core.
+                            This drift affects their performance level, leaves them below par with their competitors, and ultimately hampers their chances of achieving their overall vision.
+                            <br />
+                            At Brooksvine Consulting, we leverage our expertise in business development, business and data analytics, 
+                            and technology to develop implementable and measurable solutions for our clients in order to align and integrate their operations,
+                            keep them on track, and in the long run help them achieve their vision.
+                        </p>
+                        <p class="mb-4">
+                            We also work with entrepreneurs and aspiring entrepreneurs at various stages of their businesses by providing them with tailor-made growth infrastructure,
+                            automation, training, Business Formalization, and platforms to showcase their innovative works to our community while leveraging data and technology
+                            in creating high productivity, reaching a wider audience, improving business margins, learning, and scaling quickly.
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="{{ env('APP_URL') }}/about">Read More</a>
                     </div>
                 </div>
             </div>
@@ -136,10 +127,9 @@
                 <div class="row align-items-center" style="height: 250px;">
                     <div class="col-12 col-md-6">
                         <h3 class="text-white">Ready to get started</h3>
-                        <small class="text-white">Diam elitr est dolore at sanctus nonumy.</small>
+                        <small class="text-white">You can click on the link below to book a free consultation with us</small>
                         <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                            <a href="" class="form-control btn btn-success btn-outline-light bg-primary">Book 15 Minutes Free Consultation</a>
                         </div>
                     </div>
                     <div class="col-md-6 text-center mb-n5 d-none d-md-block">
@@ -156,22 +146,22 @@
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Our Services</div>
-                    <h2 class="mb-5">We Provide Solutions On Your Business</h2>
+                    <h2 class="mb-5">We Provide The Following Services For Your Business</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">
                                 <div class="service-icon">
-                                    <i class="fa fa-user-tie fa-2x"></i>
+                                    <i class="fa fa-chart-line fa-2x"></i>
                                 </div>
-                                <a class="service-btn" href="">
+                                <a class="service-btn" href="{{ env('APP_URL') }}/services/business_growth_support">
                                     <i class="fa fa-link fa-2x"></i>
                                 </a>
                             </div>
                             <div class="p-5">
-                                <h5 class="mb-3">Business Research</h5>
-                                <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span>
+                                <h5 class="mb-3">Business Growth Support</h5>
+                                {{-- <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span> --}}
                             </div>
                         </div>
                     </div>
@@ -179,15 +169,15 @@
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">
                                 <div class="service-icon">
-                                    <i class="fa fa-chart-pie fa-2x"></i>
+                                    <i class="fa fa-chart-area fa-2x"></i>
                                 </div>
-                                <a class="service-btn" href="">
+                                <a class="service-btn" href="{{ env('APP_URL') }}/services/business_analytics">
                                     <i class="fa fa-link fa-2x"></i>
                                 </a>
                             </div>
                             <div class="p-5">
-                                <h5 class="mb-3">Stretagic Planning</h5>
-                                <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span>
+                                <h5 class="mb-3">Business Analytics</h5>
+                                {{-- <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span> --}}
                             </div>
                         </div>
                     </div>
@@ -195,15 +185,15 @@
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">
                                 <div class="service-icon">
-                                    <i class="fa fa-chart-line fa-2x"></i>
+                                    <i class="fa fa-user-tie fa-2x"></i>
                                 </div>
-                                <a class="service-btn" href="">
+                                <a class="service-btn" href="{{ env('APP_URL') }}/services/blip">
                                     <i class="fa fa-link fa-2x"></i>
                                 </a>
                             </div>
                             <div class="p-5">
-                                <h5 class="mb-3">Market Analysis</h5>
-                                <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span>
+                                <h5 class="mb-3">Business Leaders Incubation Programs (BLIP)</h5>
+                                {{-- <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span> --}}
                             </div>
                         </div>
                     </div>
@@ -211,15 +201,15 @@
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">
                                 <div class="service-icon">
-                                    <i class="fa fa-chart-area fa-2x"></i>
+                                    <i class="fa fa-chart-pie fa-2x"></i>
                                 </div>
-                                <a class="service-btn" href="">
+                                <a class="service-btn" href="{{ env('APP_URL') }}/services/sbpl">
                                     <i class="fa fa-link fa-2x"></i>
                                 </a>
                             </div>
                             <div class="p-5">
-                                <h5 class="mb-3">Financial Analaysis</h5>
-                                <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span>
+                                <h5 class="mb-3">Strategic Business Plan Design</h5>
+                                {{-- <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span> --}}
                             </div>
                         </div>
                     </div>
@@ -229,17 +219,17 @@
                                 <div class="service-icon">
                                     <i class="fa fa-balance-scale fa-2x"></i>
                                 </div>
-                                <a class="service-btn" href="">
+                                <a class="service-btn" href="{{ env('APP_URL') }}/services/cac-business">
                                     <i class="fa fa-link fa-2x"></i>
                                 </a>
                             </div>
                             <div class="p-5">
-                                <h5 class="mb-3">legal Advisory</h5>
-                                <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span>
+                                <h5 class="mb-3">CAC Business Formalization</h5>
+                                {{-- <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span> --}}
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">
                                 <div class="service-icon">
@@ -254,7 +244,7 @@
                                 <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -262,7 +252,7 @@
 
 
         <!-- Features Start -->
-        <div class="container-xxl py-6">
+        {{-- <div class="container-xxl py-6">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -332,12 +322,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Features End -->
 
 
         <!-- Client Start -->
-        <div class="container-xxl bg-primary my-6 py-5 wow fadeInUp" data-wow-delay="0.1s">
+        {{-- <div class="container-xxl bg-primary my-6 py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container">
                 <div class="owl-carousel client-carousel">
                     <a href="#"><img class="img-fluid" src="img/logo-1.png" alt=""></a>
@@ -350,12 +340,12 @@
                     <a href="#"><img class="img-fluid" src="img/logo-8.png" alt=""></a>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Client End -->
 
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-6">
+        {{-- <div class="container-xxl py-6">
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Testimonial</div>
@@ -408,12 +398,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Testimonial End -->
 
 
         <!-- Team Start -->
-        <div class="container-xxl py-6">
+        {{-- <div class="container-xxl py-6">
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Our Team</div>
@@ -470,7 +460,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Team End -->
         
 
@@ -480,36 +470,33 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>Along Whitehouse Road, Agudama, Yenagoa, Bayelsa State.</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>+234 (0) 7065571993</p>
+                        <p><i class="fa fa-envelope me-3"></i>contact@brooksvineconsulting.com</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                            {{-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> --}}
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/brooksvineconsulting"><i class="fab fa-facebook-f"></i></a>
+                            {{-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a> --}}
+                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/brooksvine-consulting/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Quick Link</h5>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Career</a>
+                        <a class="btn btn-link" href="{{ env('APP_URL') }}/about">About Us</a>
+                        <a class="btn btn-link" href="{{ env('APP_URL') }}/contact">Contact Us</a>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Popular Link</h5>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Career</a>
+                        <a href="{{ env('APP_URL') }}/services/business_growth_support" class="btn btn-link">Business Growth Support</a>
+                                <a href="{{ env('APP_URL') }}/services/business_analytics" class="btn btn-link">Business Analytics</a>
+                                <a href="{{ env('APP_URL') }}/services/blip" class="btn btn-link">Business Leaders Incubation Programs (BLIP)</a>
+                                <a href="{{ env('APP_URL') }}/services/sbpl" class="btn btn-link">Strategic Business Plan Design</a>
+                                <a href="{{ env('APP_URL') }}/services/cac-business" class="btn btn-link">CAC Business Formalization</a>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Newsletter</h5>
-                        <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu</p>
+                        <p>You can pre-register for our upcoming Newsletter</p>
                         <div class="position-relative w-100 mt-3">
                             <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
                             <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
@@ -521,7 +508,7 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
+                            &copy; <a class="border-bottom" href="#">BrooksVine Consulting</a>, All Right Reserved. 
 							
 							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
@@ -540,6 +527,7 @@
             </div>
         </div>
         <!-- Footer End -->
+
 
 
         <!-- Back to Top -->

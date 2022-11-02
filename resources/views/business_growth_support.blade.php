@@ -69,7 +69,7 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5 wow zoomIn" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="{{ asset('img/launch.png') }}">
+                    <img class="img-fluid" src="{{ asset('img/business-growth.jpg') }}">
                 </div>
                 <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Where Is Your Business At The Moment?</div>
@@ -116,7 +116,7 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5 wow zoomIn" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="{{ asset('img/launch.png') }}">
+                    <img class="img-fluid" src="{{ asset('img/business-scale.jpeg') }}">
                 </div>
                 <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Where Is Your Business At The Moment?</div>

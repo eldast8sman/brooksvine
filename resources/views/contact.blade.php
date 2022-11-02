@@ -39,9 +39,6 @@
                         <i class="bi bi-linkedin text-primary"></i>  <a href="https://www.linkedin.com/company/brooksvine-consulting/" target="_blank">brooksvine-consulting</a>
                     </div>
                     <div class="text-center mb-4">
-                        <i class="bi bi-linkedin text-primary"></i>  <a href="https://www.linkedin.com/company/brooksvine-consulting/" target="_blank">brooksvine-consulting</a>
-                    </div>
-                    <div class="text-center mb-4">
                         <i class="bi bi-envelope text-primary"></i>  <a href="mailto:contact@brooksvineconsulting.com" target="_blank">contact@booksvineconsulting.com</a>
                     </div>
                 </div>
